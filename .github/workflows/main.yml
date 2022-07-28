@@ -2,12 +2,22 @@ name: Sample workflow for App Center action
 on: [push, pull_request, workflow_dispatch, pull_request_target]
 jobs:
   run:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Get sample .apk for test purposes
+        if: ${{ matrix.os != 'windows-latest' }}
         run: wget --output-document ApiDemos-debug.apk https://github.com/appium/appium/blob/906350fd335f9485376214fdd17c7cdb6c9ff26b/sample-code/apps/ApiDemos-debug.apk?raw=true
+        shell: bash
+      - name: Get sample .apk for test purposes (Windows)
+        if: ${{ matrix.os == 'windows-latest' }}
+        run:  Invoke-WebRequest -OutFile "ApiDemos-debug.apk" -Uri "https://github.com/appium/appium/blob/906350fd335f9485376214fdd17c7cdb6c9ff26b/sample-code/apps/ApiDemos-debug.apk?raw=true"
       - name: Upload artifact with provided release notes
         uses: ./
         with:

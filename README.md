@@ -1,15 +1,17 @@
 # App Center Github Action
 
-![Sample workflow for App Center action](https://github.com/wzieba/AppCenter-Github-Action/workflows/Sample%20workflow%20for%20App%20Center%20action/badge.svg?branch=master)
-<a href="https://github.com/wzieba/AppCenter-Github-Action/releases">![](https://img.shields.io/github/v/release/wzieba/AppCenter-Github-Action)</a>
+![Sample workflow for App Center action](https://github.com/Coxxs/AppCenter-Github-Action/workflows/Sample%20workflow%20for%20App%20Center%20action/badge.svg?branch=master)
+<a href="https://github.com/Coxxs/AppCenter-Github-Action/releases">![](https://img.shields.io/github/v/release/Coxxs/AppCenter-Github-Action)</a>
 
 This action uploads artifacts (.apk or .ipa) to Visual Studio App Center.
+
+This is a composite action. It supports Linux, Windows, and macOS.
 
 ## Inputs
 
 ### `appName`
 
-**Required** username followed by App name e.g. `wzieba/Sample-App`
+**Required** username followed by App name e.g. `Coxxs/Sample-App`
 
 ### `token`
 
@@ -45,11 +47,6 @@ If set to true, an email notification is sent to the distribution group
 
 If set to true, shows useful debug information from the action execution.
 
-## Requirements
-
-This action is Docker-based. It means **it can only execute on runners with a Linux operating system**.
-See Github Actions [documentation](https://docs.github.com/en/actions/creating-actions/about-actions#docker-container-actions) for details.
-
 ## Sample usage
 
 ```
@@ -71,9 +68,9 @@ jobs:
     - name: build release
       run: ./gradlew assembleRelease
     - name: upload artefact to App Center
-      uses: wzieba/AppCenter-Github-Action@v1
+      uses: Coxxs/AppCenter-Github-Action@v1
       with:
-        appName: wzieba/Sample-App
+        appName: Coxxs/Sample-App
         token: ${{secrets.APP_CENTER_TOKEN}}
         group: Testers
         file: app/build/outputs/apk/release/app-release-unsigned.apk

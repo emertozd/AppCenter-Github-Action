@@ -37,5 +37,25 @@ branding:
   color: "red"
   icon: "send"
 runs:
-  using: "docker"
-  image: "Dockerfile"
+  using: "composite"
+  steps:
+    - name: Install Node.js 16.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16.x
+    - run: npm install -g appcenter-cli@2.10.10
+      shell: bash
+    - name: Publish to App Center
+      run: $GITHUB_ACTION_PATH/entrypoint.sh
+      shell: bash
+      env:
+        INPUT_APPNAME: ${{ inputs.appName }}
+        INPUT_TOKEN: ${{ inputs.token }}
+        INPUT_GROUP: ${{ inputs.group }}
+        INPUT_FILE: ${{ inputs.file }}
+        INPUT_BUILDVERSION: ${{ inputs.buildVersion }}
+        INPUT_BUILDNUMBER: ${{ inputs.buildNumber }}
+        INPUT_RELEASENOTES: ${{ inputs.releaseNotes }}
+        INPUT_GITRELEASENOTES: ${{ inputs.gitReleaseNotes }}
+        INPUT_NOTIFYTESTERS: ${{ inputs.notifyTesters }}
+        INPUT_DEBUG: ${{ inputs.debug }}
