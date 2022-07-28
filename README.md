@@ -15,7 +15,7 @@ This is a composite action. It supports Linux, Windows, and macOS.
 
 ### `token`
 
-**Required** Upload token - you can get one from appcenter.ms/settings
+**Required** Upload token - you can get one from [Settings](https://appcenter.ms/settings) -> User API tokens
 
 ### `group`
 
