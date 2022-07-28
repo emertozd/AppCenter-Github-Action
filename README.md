@@ -3,7 +3,7 @@
 ![Sample workflow for App Center action](https://github.com/Coxxs/AppCenter-Github-Action/workflows/Sample%20workflow%20for%20App%20Center%20action/badge.svg?branch=master)
 <a href="https://github.com/Coxxs/AppCenter-Github-Action/releases">![](https://img.shields.io/github/v/release/Coxxs/AppCenter-Github-Action)</a>
 
-This action uploads artifacts (.apk or .ipa) to Visual Studio App Center.
+This action uploads artifacts (.apk, .ipa, etc.) to Visual Studio App Center.
 
 This is a composite action. It supports Linux, Windows, and macOS.
 
