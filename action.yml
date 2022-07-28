@@ -1,6 +1,6 @@
-name: "App Center"
+name: "App Center (Linux, Windows, macOS)"
 description: "GitHub Action that uploads artefacts for Visual Studio App Center"
-author: "Wojciech Zięba <@wzieba>"
+author: "Wojciech Zięba <@wzieba> & Coxxs"
 inputs:
   appName:
     description: "App name followed by username e.g. wzieba/Sample-App"
