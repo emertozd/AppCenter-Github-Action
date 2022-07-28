@@ -7,6 +7,8 @@ This action uploads artifacts (.apk, .ipa, etc.) to Visual Studio App Center.
 
 This is a composite action. It supports Linux, Windows, and macOS.
 
+Forked from [wzieba/AppCenter-Github-Action](https://github.com/wzieba/AppCenter-Github-Action).
+
 ## Inputs
 
 ### `appName`
