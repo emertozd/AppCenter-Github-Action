@@ -1,19 +1,19 @@
 # App Center Github Action
 
-![Sample workflow for App Center action](https://github.com/Coxxs/AppCenter-Github-Action/workflows/Sample%20workflow%20for%20App%20Center%20action/badge.svg?branch=master)
-<a href="https://github.com/Coxxs/AppCenter-Github-Action/releases">![](https://img.shields.io/github/v/release/Coxxs/AppCenter-Github-Action)</a>
+![Sample workflow for App Center action](https://github.com/emertozd/AppCenter-Github-Action/workflows/Sample%20workflow%20for%20App%20Center%20action/badge.svg?branch=master)
+<a href="https://github.com/emertozd/AppCenter-Github-Action/releases">![](https://img.shields.io/github/v/release/emertozd/AppCenter-Github-Action)</a>
 
 This action uploads artifacts (.apk, .ipa, etc.) to Visual Studio App Center.
 
 This is a composite action. It supports Linux, Windows, and macOS.
 
-Forked from [wzieba/AppCenter-Github-Action](https://github.com/wzieba/AppCenter-Github-Action).
+Forked from [Coxxs/AppCenter-Github-Action](https://github.com/Coxxs/AppCenter-Github-Action).
 
 ## Inputs
 
 ### `appName`
 
-**Required** username followed by App name e.g. `Coxxs/Sample-App`
+**Required** username followed by App name e.g. `emertozd/Sample-App`
 
 ### `token`
 
@@ -70,9 +70,9 @@ jobs:
     - name: build release
       run: ./gradlew assembleRelease
     - name: upload artefact to App Center
-      uses: Coxxs/AppCenter-Github-Action@v1
+      uses: emertozd/AppCenter-Github-Action@v1
       with:
-        appName: Coxxs/Sample-App
+        appName: emertozd/Sample-App
         token: ${{secrets.APP_CENTER_TOKEN}}
         group: Testers
         file: app/build/outputs/apk/release/app-release-unsigned.apk
